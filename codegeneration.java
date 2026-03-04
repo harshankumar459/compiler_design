@@ -47,7 +47,6 @@ public class CodeGenerator {
             expression = parts[1].trim();
         }
 
-        // Regex to tokenize numbers, identifiers, operators, and parentheses
         Pattern pattern = Pattern.compile("\\d+|[a-zA-Z_]\\w*|[-+*/^()]");
         Matcher matcher = pattern.matcher(expression);
 
@@ -82,8 +81,7 @@ public class CodeGenerator {
             System.out.println(lhs + " = " + finalResult);
         }
         System.out.println("---------------------------------------");
-        
-        // Reset for next input
+    
         tempCount = 0;
         operatorStack.clear();
         operandStack.clear();
@@ -110,4 +108,5 @@ public class CodeGenerator {
         }
         sc.close();
     }
+
 }
